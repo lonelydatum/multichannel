@@ -1,0 +1,12 @@
+@import '../../../_common/styles/common.scss';
+
+
+.green{
+	opacity: .7;
+}
+
+.bring{
+	transform-origin: 50% 50%;
+	@include pos-scale(-146, -92, .465);
+	// @include pos-scale(-150, -125, .5);
+}

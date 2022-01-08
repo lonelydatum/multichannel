@@ -47,6 +47,8 @@ function log_free(projectName){
     const size = splited[splited.length-1]
 
     const name = splited[0]
+    const t2 = splited[1]
+    const t4 = splited[2]
     
 
     var images = []
@@ -70,6 +72,9 @@ function log_free(projectName){
         .pipe(replace("takanaClient.run({host: 'localhost:48626'});", ''))
         .pipe(replace("../_common/images/"+size+"/", ''))
         .pipe(replace(name+"/", ''))
+        .pipe(replace("frame2/", ''))
+        .pipe(replace("frame4/", ''))
+        
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))
         .on("end", function(){
             for(var i=0;i<images.length;i++){     

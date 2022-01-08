@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Created: Jan 7, 11:23</title>
+<style>#banner{opacity: 0;}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="rtb" content="width=300, height=250">
+<script type="text/javascript">var clickTag = "http://www.google.com";</script>
+<style>html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html,body{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{box-sizing:inherit}a{color:inherit}body{margin:0;padding:0;background-color:#dadada}canvas{display:block;top:0;left:0}#banner{width:300px;height:250px;overflow:hidden;position:relative;-webkit-text-size-adjust:100%;opacity:1;cursor:pointer}#banner>a{width:inherit;height:inherit}canvas,.text,.frame,.outline,img{position:absolute}img{vertical-align:top;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0)scale(1,1)}.outline{z-index:99;width:inherit;height:inherit;border:1px solid #000;pointer-events:none;position:absolute}.frame{width:inherit;height:inherit;opacity:0;top:0;overflow:hidden;left:0}p{display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}sup{font-size:50%;vertical-align:top;position:relative;left:-3px}.shadow{-webkit-filter:drop-shadow(5px 5px 9px #000);filter:drop-shadow(5px 5px 9px #000)}.retina{-webkit-transform:translate(0,0)scale(.5,.5);-ms-transform:translate(0,0)scale(.5,.5);transform:translate(0,0)scale(.5,.5);-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px;position:absolute;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;image-rendering:-webkit-optimize-contrast}.frame.show{opacity:1}.bgGrad{width:100%;height:85px;position:absolute;bottom:0;opacity:.5;background:linear-gradient(0,rgba(0,0,0,.6)4%,transparent 52%)}.green{opacity:.7}.bring{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transform:translate(-146px,-92px)scale(.465,.465);-ms-transform:translate(-146px,-92px)scale(.465,.465);transform:translate(-146px,-92px)scale(.465,.465);-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px;position:absolute}</style>
+
+<script type="text/javascript"></script>
+
+</head>
+<body>
+<a href="javascript:window.open(window.clickTag)">
+<div id="banner">
+<div class="outline"></div>
+<div class="frame frame1">
+
+<img class="dash retina bottom" src="dash_bottom.png">
+<img class="dash retina top" src="dash_top.png">
+<img class="zero left retina" src="zero_left.png">
+<img class="zero right retina" src="zero_right.png">
+<img class="proline retina" src="proline_big.png">
+<img class="t1a t1 retina" src="parlay_a.png">
+<img class="t1b t1 retina" src="parlay_b.png">
+<img class="zero_middle retina" src="zero_middle.png">
+<img class="green retina" src="green.png">
+<img class="footer retina" src="footer.png">
+<img class="proline_small retina" src="proline_small.png">
+<img class="bring retina" src="bring.png">
+<img class="with_single retina" src="single.png">
+</div>
+</div>
+</a>
+</body>
+<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.1.2_min.js"></script>
+<script>!function e(o,r,t){function n(a,f){if(!r[a]){if(!o[a]){var s="function"==typeof require&&require;if(!f&&s)return s(a,!0);if(i)return i(a,!0);var c=new Error("Cannot find module '"+a+"'");throw c.code="MODULE_NOT_FOUND",c}var d=r[a]={exports:{}};o[a][0].call(d.exports,function(e){var r=o[a][1][e];return n(r?r:e)},d,d.exports,e,o,r,t)}return r[a].exports}for(var i="function"==typeof require&&require,a=0;a<t.length;a++)n(t[a]);return n}({1:[function(e,o,r){"use strict";function t(){var e=new TimelineMax({onComplete:function(){}});return e.set(".frame1",{opacity:1}),e}Object.defineProperty(r,"__esModule",{value:!0});var n=document.getElementById("banner"),i={w:n.offsetWidth,h:n.offsetHeight};TweenLite.defaultEase=Power3.easeOut;i.w,i.h;r.size=i,r.init=t},{}],2:[function(e,o,r){"use strict";var t=e("../../_common/js/common.js"),n=t.init();n.add("dash",0),n.from(".dash.top",.8,{x:-600},"dash"),n.from(".dash.bottom",.8,{x:600},"dash"),n.add("zero",.3),n.from(".zero.left",.4,{x:"-=150"},"zero"),n.from(".zero.right",.4,{x:"+=150"},"zero"),n.from(".proline",.3,{opacity:0,y:"-=50"}),n.add("t2_in","+=.9"),n.to(".proline",.3,{opacity:0,y:"+=100"},"t2_in"),n.from(".t1",.3,{opacity:0,y:"-=150"}),n.to(".t1",.3,{opacity:0,y:"+=70"},"+=3.2"),n.from([".zero_middle"],.5,{opacity:0,y:"-=80"},"+=.3"),n.add("bring","+=.3"),n.from([".green"],.1,{opacity:0},"bing"),n.from(".bring",.3,{opacity:0,scale:.6,ease:Back.easeInOut},"bing"),n.add("end","+=1"),n.to([".green",".zero_middle"],.3,{opacity:0},"end"),n.to(".zero",.3,{opacity:0},"end"),n.to(".bring",.3,{x:-t.size.w/2,y:-t.size.h/2,scale:.5,ease:Power2.easeOut},"+=.3"),n.from(".with_single",.3,{opacity:0}),n.from([".footer",".proline_small"],.3,{opacity:0}),o.exports={}},{"../../_common/js/common.js":1}]},{},[2]);</script>
+</html>
