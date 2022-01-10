@@ -10,7 +10,11 @@ var _olgJs = require('./olg.js');
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-TweenLite.defaultEase = Power4.easeOut;
+// TweenLite.defaultEase = Power4.easeOut
+
+gsap.defaults({
+	ease: "power4.out"
+});
 
 var w = size.w;
 var h = size.h;
@@ -69,15 +73,15 @@ tl.add("zero_middle", "+=.3");
 tl.from(".zero_middle", .3, { y: "-=250" }, "zero_middle");
 tl.add("bring", "+=.1");
 tl.from(".green", .1, { opacity: 0 }, "bing");
-tl.from(".bring", .3, { opacity: 0, scale: 1, ease: Back.easeOut }, "bing");
+tl.from(".bring", .3, { opacity: 0, scale: 1, ease: 'back.out' }, "bing");
 
 tl.add("end", "+=2");
 tl.to([".green", ".zero_middle"], .3, { opacity: 0 }, "end");
 tl.to(".zero", .3, { opacity: 0 }, "end");
 
 tl.add("bring_end", "+=.3");
-tl.to(".bring", .1, { x: -_commonJsCommonJs.size.w / 2, y: -_commonJsCommonJs.size.h / 2, scale: .5, ease: Power4.easeOut }, "bring_end");
-tl.from(".with_single", .3, { opacity: 0, y: "-=30", ease: Power2.easeIn }, "bring_end");
+tl.to(".bring", .1, { x: -_commonJsCommonJs.size.w / 2, y: -_commonJsCommonJs.size.h / 2, scale: .5 }, "bring_end");
+tl.from(".with_single", .3, { opacity: 0, y: "-=30", ease: 'power2.out' }, "bring_end");
 
 tl.add("olg", "+=1.1");
 tl.from([".footer", ".proline_small"], .3, { opacity: 0 }, "olg");

@@ -3,7 +3,11 @@ import {olg} from './olg.js'
 const banner = document.getElementById('banner')
 const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
-TweenLite.defaultEase = Power4.easeOut
+// TweenLite.defaultEase = Power4.easeOut
+
+gsap.defaults({
+  ease: "power4.out"
+});
 
 
 const {w, h} = size

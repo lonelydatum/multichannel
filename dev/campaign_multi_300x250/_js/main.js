@@ -8,7 +8,7 @@ import {init, olg} from '../../_common/js/common.js'
 const tl = init()
 TweenLite.set(".zero", {x:-150, y:-125})
 
-tl.from(".zero",  {duration:.3, scale:1, ease:'Back.easeOut'})
+tl.from(".zero",  {duration:.3, scale:1, ease:'back.out'})
 tl.from(".bring",  {duration:.3, opacity:0, x:"-=100"})
 
 

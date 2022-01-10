@@ -10,7 +10,11 @@ var _olgJs = require('./olg.js');
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-TweenLite.defaultEase = Power4.easeOut;
+// TweenLite.defaultEase = Power4.easeOut
+
+gsap.defaults({
+	ease: "power4.out"
+});
 
 var w = size.w;
 var h = size.h;
@@ -53,7 +57,7 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 var tl = (0, _commonJsCommonJs.init)();
 TweenLite.set(".zero", { x: -150, y: -125 });
 
-tl.from(".zero", { duration: .3, scale: 1, ease: 'Back.easeOut' });
+tl.from(".zero", { duration: .3, scale: 1, ease: 'back.out' });
 tl.from(".bring", { duration: .3, opacity: 0, x: "-=100" });
 
 tl.add("chev", "+=.5");
