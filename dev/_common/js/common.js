@@ -1,3 +1,5 @@
+import {olg} from './olg.js'
+
 const banner = document.getElementById('banner')
 const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
@@ -21,4 +23,4 @@ function init(){
 
 
 
-export {size, init}
+export {size, init, olg}

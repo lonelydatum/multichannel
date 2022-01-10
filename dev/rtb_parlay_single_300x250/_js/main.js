@@ -1,7 +1,7 @@
 
 
 
-import {init, size} from '../../_common/js/common.js'
+import {init, size, olg} from '../../_common/js/common.js'
 
 
 
@@ -36,10 +36,11 @@ tl.to(".zero", .3, {opacity:0}, "end")
 tl.add("bring_end", "+=.3")
 tl.to(".bring", .1, {x:-size.w/2, y:-size.h/2, scale:.5, ease:Power4.easeOut}, "bring_end")
 tl.from(".with_single", .3, {opacity:0, y:"-=30", ease:Power2.easeIn}, "bring_end")
-tl.from([".footer", ".proline_small"], .3, {opacity:0}, "+=1.1")
 
-
-// tl.gotoAndPlay("zero_middle")
+tl.add("olg", "+=1.1")
+tl.from([".footer", ".proline_small"], .3, {opacity:0}, "olg")
+tl.add(olg(), "olg")
+// tl.play("bring_end")
 
 
 

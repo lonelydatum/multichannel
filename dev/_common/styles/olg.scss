@@ -31,3 +31,16 @@
 	background-color: red;
 	display: none;
 }
+
+
+#olg{
+	opacity: 0;
+}
+#bluewedge2, #redwedge2 {
+    visibility:hidden;
+}
+
+#bluewedge1, #redwedge1 {
+    transform-origin: 0% 100% !important;
+    @include prefix( translate(0px, 0px) scale(1, 0) );
+}

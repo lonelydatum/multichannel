@@ -1,0 +1,12 @@
+#banner{
+	width: 300px;
+	height: 250px;
+}
+
+
+
+#olg{
+	width: 136px;
+	height: 69px;
+	@include pos(0, 188);
+}

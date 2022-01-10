@@ -95,6 +95,23 @@ table {
   display: none;
 }
 
+#olg {
+  opacity: 0;
+}
+
+#bluewedge2, #redwedge2 {
+  visibility: hidden;
+}
+
+#bluewedge1, #redwedge1 {
+  -webkit-transform-origin: 0% 100% !important;
+  -ms-transform-origin: 0% 100% !important;
+  transform-origin: 0% 100% !important;
+  -webkit-transform: translate(0px, 0px) scale(1, 0);
+  -ms-transform: translate(0px, 0px) scale(1, 0);
+  transform: translate(0px, 0px) scale(1, 0);
+}
+
 /*--------------------------------------------*/
 /* common */
 /*--------------------------------------------*/
@@ -209,6 +226,24 @@ img {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+}
+
+#banner {
+  width: 300px;
+  height: 250px;
+}
+
+#olg {
+  width: 136px;
+  height: 69px;
+  -webkit-transform: translate(0px, 188px);
+  -ms-transform: translate(0px, 188px);
+  transform: translate(0px, 188px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 #legalBtn {
