@@ -51,6 +51,50 @@ table {
   border-spacing: 0;
 }
 
+#legalBtn:hover ~ #legalContent {
+  opacity: 1;
+}
+
+#legalContent {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font-size: 10px;
+  z-index: 90;
+  opacity: 0;
+  font-weight: normal;
+  line-height: 15px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+#legalBtn {
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  opacity: 0;
+  width: 36px;
+  height: 25px;
+  background-color: red;
+  display: none;
+}
+
 /*--------------------------------------------*/
 /* common */
 /*--------------------------------------------*/
@@ -124,19 +168,6 @@ img {
   left: 0;
 }
 
-p {
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-sup {
-  font-size: 50%;
-  vertical-align: top;
-  position: relative;
-  left: -3px;
-}
-
 .shadow {
   -webkit-filter: drop-shadow(5px 5px 9px black);
   filter: drop-shadow(5px 5px 9px black);
@@ -168,6 +199,27 @@ sup {
   bottom: 0;
   opacity: .5;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, transparent 52%);
+}
+
+#banner {
+  background-color: black;
+}
+
+.zero {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+#legalBtn {
+  -webkit-transform: translate(110px, 224px);
+  -ms-transform: translate(110px, 224px);
+  transform: translate(110px, 224px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */

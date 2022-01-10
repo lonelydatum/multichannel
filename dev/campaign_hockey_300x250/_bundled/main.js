@@ -7,17 +7,16 @@ Object.defineProperty(exports, "__esModule", {
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-TweenLite.defaultEase = Power3.easeOut;
+TweenLite.defaultEase = Power4.easeOut;
 
 var w = size.w;
 var h = size.h;
 
 function init() {
-
-	var tl = new TimelineMax({ onComplete: function onComplete() {} });
-
+	var tl = new TimelineMax({ onComplete: function onComplete() {
+			TweenLite.set("#legalBtn", { display: "block" });
+		} });
 	tl.set(".frame1", { opacity: 1 });
-
 	return tl;
 }
 
@@ -25,11 +24,29 @@ exports.size = size;
 exports.init = init;
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 var tl = (0, _commonJsCommonJs.init)();
+TweenLite.set(".zero", { x: -150, y: -125 });
+
+tl.from(".zero", .3, { scale: 1, ease: Back.easeInOut });
+tl.from(".bring", .3, { opacity: 0, x: "-=100" });
+
+tl.add("chev", "+=.5");
+tl.to(".zero", .3, { opacity: 0 }, "chev");
+tl.from(".chev_1", .3, { opacity: 0 }, "chev");
+tl.from(".chev_2", .3, { opacity: 0 }, "-=.2");
+tl.from(".chev_3", .3, { opacity: 0 }, "-=.2");
+
+tl.add("text", "+=1");
+tl.to(".bring", .3, { opacity: 0, x: "+=100" }, "text");
+tl.from(".text_end", .3, { opacity: 0, x: "-=100" }, "text");
+
+tl.add("end", "+=1.2");
+tl.from(".bring_small", .3, { opacity: 0 }, "end");
+tl.from(".footer", .3, { opacity: 0 }, "end");
 
 module.exports = {};
 

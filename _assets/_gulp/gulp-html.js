@@ -8,12 +8,12 @@ function buildTemplates(project, browserSync){
 	var splitInfo = project.split('_');
     const len = splitInfo.length
     var name = splitInfo[0];
-    var t2 = splitInfo[1];
-    var t4 = splitInfo[2];
+    var var1 = splitInfo[1];
+    var var2 = splitInfo[2];
     var size = splitInfo[len-1].split("x");
     var width = size[0];
     var height = size[1];
-    var obj = {name: name, width:width, height:height, t2:t2, t4:t4};
+    var obj = {name: name, width:width, height:height, var1:var1, var2:var2, size:splitInfo[len-1]};
 
     return gulp.src("./dev/"+project+"/index.ejs")
 

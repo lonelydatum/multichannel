@@ -1,5 +1,6 @@
 @import './mixins.scss';
 @import './reset.scss';
+@import './olg.scss';
 
 
 /*--------------------------------------------*/
@@ -75,21 +76,6 @@ img{
 	left:0;
 	
 }
-
-p{
-	display: inline-block;
-	// font-weight: normal !important;
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-}
-
-sup{
-	font-size: 50%;
-	vertical-align: top;
-	position: relative;
-	left:-3px;
-}
-
 
 
 .shadow{

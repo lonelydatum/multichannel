@@ -1,12 +1,15 @@
-@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/rtb.scss';
 
 
-.green{
-	opacity: .7;
-}
+
 
 .bring{
 	transform-origin: 50% 50%;
 	@include pos-scale(-146, -92, .465);
 	// @include pos-scale(-150, -125, .5);
+}
+
+#legalBtn{	
+	@include pos(195, 224);
+	// opacity: 1;
 }
