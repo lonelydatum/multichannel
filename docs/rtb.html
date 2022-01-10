@@ -10,6 +10,9 @@
         a{
             color:#AAA;
         }
+         body{
+            padding-bottom: 100px;
+        }
     </style>
     <script>
 
@@ -83,6 +86,15 @@
 
 <script src="vendor.bundle.js"> </script>
 <script src="bundle.js"> </script>
+
+
+<script type="text/javascript">
+    var listEL = document.querySelector(".list")
+        var link = document.createElement("a")
+        link.innerHTML = "Go to Campaign"
+        link.href = "https://lonelydatum.github.io/multichannel/rtb.html"
+        listEL.appendChild(link)
+</script>
 
 </body>
 </html>
