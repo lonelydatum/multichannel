@@ -31,7 +31,7 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 var tl = (0, _commonJsCommonJs.init)();
 TweenLite.set(".zero", { x: -150, y: -125 });
 
-tl.from(".zero", .3, { scale: 1, ease: Back.easeInOut });
+tl.from(".zero", .3, { scale: 1, ease: Back.easeOut });
 tl.from(".bring", .3, { opacity: 0, x: "-=100" });
 
 tl.add("chev", "+=.5");

@@ -6,7 +6,7 @@ import {init} from '../../_common/js/common.js'
 const tl = init()
 TweenLite.set(".zero", {x:-150, y:-125})
 
-tl.from(".zero", .3, {scale:1, ease:Back.easeInOut})
+tl.from(".zero", .3, {scale:1, ease:Back.easeOut})
 tl.from(".bring", .3, {opacity:0, x:"-=100"})
 
 
