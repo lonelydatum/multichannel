@@ -3,3 +3,12 @@
 .green{
 	opacity: .7;
 }
+
+
+.proline_small{
+	// @include pos-scale(0, -51, .5);
+}
+
+.cta{
+	@include pos-scale(0, 48, .5);
+}
