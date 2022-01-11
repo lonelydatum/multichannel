@@ -1,9 +1,10 @@
 import {olg} from './olg.js'
 
 const banner = document.getElementById('banner')
+TweenLite.set("#banner", {width:olg_var.width, height:olg_var.height})
 const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
-// TweenLite.defaultEase = Power4.easeOut
+
 
 gsap.defaults({
   ease: "power4.out"
@@ -20,6 +21,7 @@ function init(){
 		TweenLite.set("#legalBtn", {display:"block"})
 	}})
 	tl.set(".frame1", {opacity:1})
+	tl.set("#legalBtn", {zIndex:100})
 	return tl
 }
 
