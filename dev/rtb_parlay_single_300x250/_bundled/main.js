@@ -62,8 +62,8 @@ TweenLite.set(".top_2", { x: -_commonJsCommonJs.size.w });
 
 var tl = (0, _commonJsCommonJs.init)();
 tl.add("dash", 0);
-TweenLite.to(".dash.top", { duration: 15, x: "+=600", ease: "power1.out" }, "dash");
-TweenLite.to(".dash.bottom", { duration: 15, x: "-=600", ease: "power1.out" }, "dash");
+TweenLite.to(".dash.top", { duration: 14, x: "+=600", ease: "power1.out" }, "dash");
+TweenLite.to(".dash.bottom", { duration: 14, x: "-=600", ease: "power1.out" }, "dash");
 
 tl.add("zero", .3);
 tl.from(".zero.left", { duration: .4, x: "-=150" }, "zero");
@@ -83,17 +83,16 @@ tl.add("bring", "+=.1");
 tl.from(".green", { duration: .1, opacity: 0 }, "bring");
 tl.from(".bring", { duration: .3, opacity: 0, scale: 1, ease: 'back.out' }, "bring");
 
-tl.add("end", "+=2");
+tl.add("end", "+=1");
 tl.to([".green", ".zero_middle"], { duration: .3, opacity: 0 }, "end");
 tl.to(".zero", { duration: .3, opacity: 0 }, "end");
 
-tl.add("bring_end", "+=.3");
-tl.to(".bring", { duration: .1, x: -_commonJsCommonJs.size.w / 2, y: -_commonJsCommonJs.size.h / 2, scale: .5 }, "bring_end");
-tl.from(".with_single", { duration: .3, opacity: 0, y: "-=30", ease: 'power2.out' }, "bring_end");
-tl.to(".with_single", { duration: .3, opacity: 0 }, "+=2");
-tl.from(".cta", { duration: .1, opacity: 0 });
+tl.to(".bring", { duration: .3, x: -_commonJsCommonJs.size.w / 2, y: -_commonJsCommonJs.size.h / 2, scale: .5 }, "+=.3");
+tl.from(".text_end", { duration: .3, opacity: 0 }, "+=.3");
+tl.to(".text_end", { duration: .3, opacity: 0 }, "+=2");
+tl.from(".cta", { duration: .5, opacity: 0 });
 
-tl.add("olg", "+=1.1");
+tl.add("olg", "+=.1");
 tl.from([".footer", ".proline_small"], { duration: .3, opacity: 0 }, "olg");
 tl.add((0, _commonJsCommonJs.olg)(), "olg");
 
