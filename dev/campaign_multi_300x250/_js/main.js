@@ -19,14 +19,13 @@ tl.from(".chev_2",  {duration:.3, opacity:0}, "-=.2")
 tl.from(".chev_3",  {duration:.3, opacity:0}, "-=.2")
 
 tl.add("text", "+=1")
-tl.to(".bring",  {duration:.3, opacity:0, x:"+=100"}, "text")
-tl.from(".text_end",  {duration:.3, opacity:0, x:"-=100"}, "text")
 
-tl.add("end", "+=1.2")
-tl.from(".bring_small",  {duration:.3, opacity:0}, "end")
-tl.from(".footer",  {duration:.3, opacity:0}, "end")
+tl.from([".proline", ".cta"],  {duration:.5, opacity:0}, "text")
 
-tl.add(olg())
+tl.add("end")
+
+tl.add(olg(), "end")
+tl.from(".footer",  {duration:.5, opacity:0}, "end")
 
 // tl.play("end")
 

@@ -181,7 +181,6 @@ img {
   height: inherit;
   opacity: 0;
   top: 0;
-  overflow: hidden;
   left: 0;
 }
 
@@ -244,9 +243,9 @@ img {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transform: translate(-146px, -92px) scale(0.465, 0.465);
-  -ms-transform: translate(-146px, -92px) scale(0.465, 0.465);
-  transform: translate(-146px, -92px) scale(0.465, 0.465);
+  -webkit-transform: translate(-147px, -81px) scale(0.485, 0.485);
+  -ms-transform: translate(-147px, -81px) scale(0.485, 0.485);
+  transform: translate(-147px, -81px) scale(0.485, 0.485);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -255,9 +254,9 @@ img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(195px, 224px);
-  -ms-transform: translate(195px, 224px);
-  transform: translate(195px, 224px);
+  -webkit-transform: translate(195px, 213px);
+  -ms-transform: translate(195px, 213px);
+  transform: translate(195px, 213px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
