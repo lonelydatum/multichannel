@@ -19,9 +19,9 @@ function dashMove(amt=1.2){
 }
 
 
-function start(){
+function start(dash=1.5){
 	
-	dashMove()
+	dashMove(dash)
 	const tl = init()
 	
 	

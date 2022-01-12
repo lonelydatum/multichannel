@@ -4,7 +4,7 @@
 var _commonJs = require('./common.js');
 
 function dashMove() {
-	var amt = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
+	var amt = arguments.length <= 0 || arguments[0] === undefined ? 1.2 : arguments[0];
 
 	TweenLite.set(".bottom_1", { x: 0 });
 	TweenLite.set(".bottom_2", { x: 1 * _commonJs.size.w });
@@ -19,8 +19,9 @@ function dashMove() {
 }
 
 function start() {
+	var dash = arguments.length <= 0 || arguments[0] === undefined ? 1.5 : arguments[0];
 
-	dashMove();
+	dashMove(dash);
 	var tl = (0, _commonJs.init)();
 
 	tl.add(zeroSlideX());
@@ -208,7 +209,7 @@ module.exports = { olg: olg };
 
 var _commonJs_rtbJs = require('../../_common/js/_rtb.js');
 
-(0, _commonJs_rtbJs.start)();
+(0, _commonJs_rtbJs.start)(.5);
 
 },{"../../_common/js/_rtb.js":1}]},{},[4])
 
