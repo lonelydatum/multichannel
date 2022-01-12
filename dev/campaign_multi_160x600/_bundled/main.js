@@ -38,7 +38,8 @@ function chev() {
 
 function end() {
 	var tl = new TimelineMax();
-	tl.from([".proline", ".cta"], { duration: .5, opacity: 0 });
+	tl.from([".proline"], { duration: .3, opacity: 0 });
+	tl.from([".cta"], { duration: .3, opacity: 0 }, "+=.2");
 	tl.add("end");
 
 	tl.add((0, _commonJs.olg)(), "end");
