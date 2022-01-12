@@ -52,7 +52,7 @@ function start() {
 	tl.from([".footer"], { duration: .3, opacity: 0 }, "olg");
 	tl.add((0, _commonJs.olg)(), "olg");
 
-	// tl.play("bring")
+	// tl.play("bring-=1")
 }
 
 function zeroSlideX() {
