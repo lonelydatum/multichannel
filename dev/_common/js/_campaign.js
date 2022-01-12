@@ -42,7 +42,7 @@ function end(){
 	const tl = new TimelineMax()	
 	tl.from([".proline"],  {duration:.3, opacity:0})
 	tl.from([".cta"],  {duration:.3, opacity:0}, "+=.2")
-	tl.add("end")
+	tl.add("end", "+=.3")
 
 	tl.add(olg(), "end")
 	tl.from(".footer",  {duration:.5, opacity:0}, "end")
