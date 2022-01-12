@@ -3,7 +3,8 @@
 
 var _commonJs = require('./common.js');
 
-function dashMove(amt) {
+function dashMove() {
+	var amt = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
 
 	TweenLite.set(".bottom_1", { x: 0 });
 	TweenLite.set(".bottom_2", { x: 1 * _commonJs.size.w });
@@ -19,6 +20,7 @@ function dashMove(amt) {
 
 function start() {
 
+	dashMove();
 	var tl = (0, _commonJs.init)();
 
 	tl.add(zeroSlideX());
@@ -70,6 +72,7 @@ function textX() {
 }
 
 function vertical() {
+	dashMove();
 	var tl = (0, _commonJs.init)();
 
 	tl.add(zeroSlideX());

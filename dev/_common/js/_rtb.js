@@ -3,7 +3,7 @@
 
 import {init, size, olg} from './common.js'
 
-function dashMove(amt){
+function dashMove(amt=1.2){
 
 	TweenLite.set(".bottom_1", {x:0})
 	TweenLite.set(".bottom_2", {x:1*size.w})
@@ -21,7 +21,7 @@ function dashMove(amt){
 
 function start(){
 	
-	
+	dashMove()
 	const tl = init()
 	
 	
@@ -80,6 +80,7 @@ function textX(){
 }
 
 function vertical(){
+	dashMove()
 	const tl = init()
 
 	tl.add(zeroSlideX())	
