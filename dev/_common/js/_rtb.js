@@ -47,9 +47,7 @@ function start(){
 	tl.to(".bring", {duration:.3, x:-size.w/2, y:-size.h/2, scale:.5}, "+=.3")
 	tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0}, "+=.3")
 
-	// tl.add("cta-shift", "+=2")
 	
-	// tl.to(".proline_small", {duration:.3, y:-50 }, "cta-shift")
 
 	tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")
 	tl.from(".cta", {duration:.5, opacity:0})

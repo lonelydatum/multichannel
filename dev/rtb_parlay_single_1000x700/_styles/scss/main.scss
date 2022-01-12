@@ -1,0 +1,9 @@
+@import '../../../_common/styles/rtb.scss';
+@import '../../../_common/styles/1000x700.scss';
+
+.bring{
+	transform-origin: 50% 50%;
+	@include pos-scale(-500, -238, .5);
+	// @include pos-scale(-150, -125, .5);
+}
+

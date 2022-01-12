@@ -1,0 +1,18 @@
+#banner{
+	width: 1000px;
+	height: 700px;
+}
+
+#legalBtn{
+	width: 80px;
+	@include pos(920, 636);
+	// opacity: 1 !important;
+}
+
+#olg{
+	// border: 1px solid red;
+	width: 202px;
+	height: 119px;
+	@include pos(0, 590);
+	opacity: 1 !important;
+}
