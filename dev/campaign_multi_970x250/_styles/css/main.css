@@ -217,8 +217,18 @@ img {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, transparent 52%);
 }
 
-.green {
-  opacity: .7;
+#banner {
+  background-color: black;
+}
+
+.zero {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.bring_shadow {
+  display: none;
 }
 
 #banner {
@@ -253,20 +263,9 @@ img {
 }
 
 .bring {
-  -webkit-transform: translate(181px, 0px) scale(0.5, 0.5);
-  -ms-transform: translate(181px, 0px) scale(0.5, 0.5);
-  transform: translate(181px, 0px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.proline_small {
-  -webkit-transform: translate(0px, 30px) scale(0.5, 0.5);
-  -ms-transform: translate(0px, 30px) scale(0.5, 0.5);
-  transform: translate(0px, 30px) scale(0.5, 0.5);
+  -webkit-transform: translate(-124px, -56px) scale(0.78, 0.78);
+  -ms-transform: translate(-124px, -56px) scale(0.78, 0.78);
+  transform: translate(-124px, -56px) scale(0.78, 0.78);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
