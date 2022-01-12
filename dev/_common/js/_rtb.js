@@ -3,22 +3,25 @@
 
 import {init, size, olg} from './common.js'
 
-TweenLite.set(".bottom_1", {x:0})
-TweenLite.set(".bottom_2", {x:1*size.w})
-TweenLite.set(".bottom_3", {x:2*size.w})
+function dashMove(amt){
+
+	TweenLite.set(".bottom_1", {x:0})
+	TweenLite.set(".bottom_2", {x:1*size.w})
+	TweenLite.set(".bottom_3", {x:2*size.w})
 
 
-TweenLite.set(".top_1", {x:-0})
-TweenLite.set(".top_2", {x:-size.w*1})
-TweenLite.set(".top_3", {x:-size.w*2})
+	TweenLite.set(".top_1", {x:-0})
+	TweenLite.set(".top_2", {x:-size.w*1})
+	TweenLite.set(".top_3", {x:-size.w*2})
 
-TweenLite.to(".dash.top", {duration:13, x:`+=${size.w*2}`, ease:"power0.out"}, "dash")
-TweenLite.to(".dash.bottom", {duration:13, x:`-=${size.w*2}`, ease:"power0.out"}, "dash")
+	TweenLite.to(".dash.top", {duration:13, x:`+=${size.w*amt}`, ease:"power0.out"}, "dash")
+	TweenLite.to(".dash.bottom", {duration:13, x:`-=${size.w*amt}`, ease:"power0.out"}, "dash")
+}
 
 
 function start(){
 	
-
+	
 	const tl = init()
 	
 	
@@ -97,6 +100,39 @@ function ss_dbb_end(){
 	return tl
 }
 
+function lb_mobile(){
 
-module.exports = {start, zeroSlideX, textX, ss_dbb_end};
+	dashMove(.8)
+	const tl = init()
+
+	tl.add("zero", .3)
+	tl.from(".zero.left", {duration:.4, x:"-=100"}, "zero")
+	tl.from(".zero.right", {duration:.4, x:"+=100"}, "zero")
+	tl.from(".proline", {duration:.4, y:"-=80", opacity:0})
+
+	tl.to(".proline", {duration:.4, opacity:0, y:`+=${size.h}`}, "+=1")
+
+
+	tl.add("text")
+	tl.from(".t1a", {duration:.3, opacity:0, y:`-=${size.h}`}, "text")
+	tl.from(".t1b", {duration:.3, opacity:0, y:`+=${size.h}`}, "text")
+	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, "+=3.2")
+
+	tl.from(".bring", {duration:.3, y:`-=${size.h}`})
+
+	tl.add("end", "+=1")
+	tl.to(".zero", {duration:.3, opacity:0}, "end")
+	tl.to(".bring", {duration:.3, x:0, y:0, scale:.5}, "end")
+
+	tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0}, "+=.3")
+	tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")
+	tl.from(".cta", {duration:.5, opacity:0})
+
+	tl.add("olg", "+=.1")
+	tl.from([".footer"], {duration:.3, opacity:0}, "olg")
+	tl.add(olg(), "olg")
+}
+
+
+module.exports = {start, zeroSlideX, textX, ss_dbb_end, dashMove, lb_mobile};
 

@@ -3,16 +3,19 @@
 
 var _commonJs = require('./common.js');
 
-TweenLite.set(".bottom_1", { x: 0 });
-TweenLite.set(".bottom_2", { x: 1 * _commonJs.size.w });
-TweenLite.set(".bottom_3", { x: 2 * _commonJs.size.w });
+function dashMove(amt) {
 
-TweenLite.set(".top_1", { x: -0 });
-TweenLite.set(".top_2", { x: -_commonJs.size.w * 1 });
-TweenLite.set(".top_3", { x: -_commonJs.size.w * 2 });
+	TweenLite.set(".bottom_1", { x: 0 });
+	TweenLite.set(".bottom_2", { x: 1 * _commonJs.size.w });
+	TweenLite.set(".bottom_3", { x: 2 * _commonJs.size.w });
 
-TweenLite.to(".dash.top", { duration: 13, x: "+=" + _commonJs.size.w * 2, ease: "power0.out" }, "dash");
-TweenLite.to(".dash.bottom", { duration: 13, x: "-=" + _commonJs.size.w * 2, ease: "power0.out" }, "dash");
+	TweenLite.set(".top_1", { x: -0 });
+	TweenLite.set(".top_2", { x: -_commonJs.size.w * 1 });
+	TweenLite.set(".top_3", { x: -_commonJs.size.w * 2 });
+
+	TweenLite.to(".dash.top", { duration: 13, x: "+=" + _commonJs.size.w * amt, ease: "power0.out" }, "dash");
+	TweenLite.to(".dash.bottom", { duration: 13, x: "-=" + _commonJs.size.w * amt, ease: "power0.out" }, "dash");
+}
 
 function start() {
 
@@ -88,7 +91,39 @@ function ss_dbb_end() {
 	return tl;
 }
 
-module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, ss_dbb_end: ss_dbb_end };
+function lb_mobile() {
+
+	dashMove(.8);
+	var tl = (0, _commonJs.init)();
+
+	tl.add("zero", .3);
+	tl.from(".zero.left", { duration: .4, x: "-=100" }, "zero");
+	tl.from(".zero.right", { duration: .4, x: "+=100" }, "zero");
+	tl.from(".proline", { duration: .4, y: "-=80", opacity: 0 });
+
+	tl.to(".proline", { duration: .4, opacity: 0, y: "+=" + _commonJs.size.h }, "+=1");
+
+	tl.add("text");
+	tl.from(".t1a", { duration: .3, opacity: 0, y: "-=" + _commonJs.size.h }, "text");
+	tl.from(".t1b", { duration: .3, opacity: 0, y: "+=" + _commonJs.size.h }, "text");
+	tl.to(".t1", { duration: .2, opacity: 0, y: "+=70" }, "+=3.2");
+
+	tl.from(".bring", { duration: .3, y: "-=" + _commonJs.size.h });
+
+	tl.add("end", "+=1");
+	tl.to(".zero", { duration: .3, opacity: 0 }, "end");
+	tl.to(".bring", { duration: .3, x: 0, y: 0, scale: .5 }, "end");
+
+	tl.from([".text_end", ".proline_small"], { duration: .3, opacity: 0 }, "+=.3");
+	tl.to(".text_end", { duration: .3, opacity: 0 }, "+=2");
+	tl.from(".cta", { duration: .5, opacity: 0 });
+
+	tl.add("olg", "+=.1");
+	tl.from([".footer"], { duration: .3, opacity: 0 }, "olg");
+	tl.add((0, _commonJs.olg)(), "olg");
+}
+
+module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, ss_dbb_end: ss_dbb_end, dashMove: dashMove, lb_mobile: lb_mobile };
 
 },{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
