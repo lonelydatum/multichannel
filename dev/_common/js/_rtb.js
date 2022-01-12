@@ -4,7 +4,7 @@
 import {init, size, olg} from './common.js'
 
 function dashMove(amt=1.2){
-
+	console.log(amt);
 	TweenLite.set(".bottom_1", {x:0})
 	TweenLite.set(".bottom_2", {x:1*size.w})
 	TweenLite.set(".bottom_3", {x:2*size.w})
@@ -75,12 +75,20 @@ function textX(){
 	tl.add("text")
 	tl.from(".t1a", {duration:.3, opacity:0, x:"-=100"}, "text")
 	tl.from(".t1b", {duration:.3, opacity:0, x:"+=100"}, "text")
-	tl.to([".t1", ".green", ".zero.left", ".zero.right"], {duration:.2, opacity:0}, "+=3.2")
+	
+	if(olg_var.size==="300x600"){
+		tl.add("slideout", "+=2.8")
+		tl.to(".zero.left", {duration:.4, x:`-=${size.w/2}`, opacity:0}, "slideout")
+		tl.to(".zero.right", {duration:.4, x:`+=${size.w/2}`, opacity:0}, "slideout")
+		tl.to([".t1", ".green"], {duration:.2, opacity:0}, "slideout")
+	}else{
+		tl.to([".t1", ".green", ".zero.left", ".zero.right"], {duration:.2, opacity:0}, "+=2.8")
+	}
 	return tl
 }
 
-function vertical(){
-	dashMove()
+function vertical(dashSpeed){
+	dashMove(dashSpeed)
 	const tl = init()
 
 	tl.add(zeroSlideX())	
@@ -92,18 +100,20 @@ function vertical(){
 		tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0}, "+=.9")
 		tl.from(".zero_middle", {duration:.4, opacity:0})
 		tl.add(textX())
+		tl.from(".bring", {duration:.3, x:"-=100", opacity:0})
 	}
 
 	if(olg_var.size==="300x600"){
-		tl.add(textX())
-		tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0})	
+		tl.add(textX(), "+=.5")
+		// tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0})	
 		tl.from(".zero_middle", {duration:.4, opacity:0})
+		tl.from(".bring", {duration:.3, x:"-=100", opacity:0}, "+=.3")
 	}
 
 	
 
 
-	tl.from(".bring", {duration:.3, x:"-=100", opacity:0})
+	
 
 	tl.to([".zero", ".green", ".zero_middle"], {duration:.3, opacity:0}, "+=1.5")
 
@@ -120,9 +130,9 @@ function vertical(){
 	return tl
 }
 
-function lb_mobile(){
+function lb_mobile(dashSpeed=.6){
 
-	dashMove(.8)
+	dashMove(dashSpeed)
 	const tl = init()
 
 	tl.add("zero", .3)

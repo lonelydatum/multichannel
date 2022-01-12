@@ -9,7 +9,12 @@ function start(){
 
 	tl.add(bring())
 
-	tl.add(chev())
+	if(olg_var.size==="300x250" || olg_var.size==="300x600"){
+		tl.add(chev(), "+=.7")	
+	}else{
+		tl.add(chev())
+	}
+	
 	
 
 	tl.add(end())

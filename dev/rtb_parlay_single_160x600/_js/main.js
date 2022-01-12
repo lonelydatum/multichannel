@@ -5,5 +5,5 @@ import {start, textX, zeroSlideX, vertical} from '../../_common/js/_rtb.js'
 
 
 
-vertical()
+vertical(3)
 
