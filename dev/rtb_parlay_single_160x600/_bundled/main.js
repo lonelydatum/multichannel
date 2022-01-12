@@ -52,7 +52,7 @@ function start() {
 	// tl.play("bring")
 }
 
-function zero() {
+function zeroSlideX() {
 	var tl = new TimelineMax();
 	tl.add("zero", .3);
 	tl.from(".zero.left", { duration: .4, x: "-=100" }, "zero");
@@ -61,7 +61,34 @@ function zero() {
 	return tl;
 }
 
-module.exports = { start: start, zero: zero };
+function textX() {
+	var tl = new TimelineMax();
+	tl.add("text");
+	tl.from(".t1a", { duration: .3, opacity: 0, x: "-=100" }, "text");
+	tl.from(".t1b", { duration: .3, opacity: 0, x: "+=100" }, "text");
+	tl.to([".t1", ".green", ".zero.left", ".zero.right"], { duration: .2, opacity: 0 }, "+=3.2");
+	return tl;
+}
+
+function ss_dbb_end() {
+	var tl = new TimelineMax();
+	tl.from(".bring", { duration: .3, x: "-=100", opacity: 0 });
+
+	tl.to([".zero", ".green", ".zero_middle"], { duration: .3, opacity: 0 }, "+=1.5");
+
+	tl.from(".bring", { duration: .3, y: 0, scale: .5 }, "+=.3");
+	tl.from(".text_end", { duration: .3, opacity: 0 }, "+=.1");
+
+	tl.to(".text_end", { duration: .3, opacity: 0 }, "+=2");
+	tl.from(".cta", { duration: .5, opacity: 0 });
+
+	tl.add("olg", "+=.1");
+	tl.from([".footer"], { duration: .3, opacity: 0 }, "olg");
+	tl.add((0, _commonJs.olg)(), "olg");
+	return tl;
+}
+
+module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, ss_dbb_end: ss_dbb_end };
 
 },{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
@@ -122,37 +149,16 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 var _commonJs_rtbJs = require('../../_common/js/_rtb.js');
 
 function wow() {
-
 	var tl = (0, _commonJsCommonJs.init)();
-	tl.add("dash", 0);
-
-	tl.add((0, _commonJs_rtbJs.zero)());
+	tl.add((0, _commonJs_rtbJs.zeroSlideX)());
 
 	tl.from(".proline", { duration: .3, opacity: 0 }, "+=.1");
 	tl.to([".zero.left", ".zero.right"], { duration: .3, opacity: 0 }, "+=.9");
 	tl.from(".zero_middle", { duration: .4, opacity: 0 });
 
-	tl.add("text");
-	tl.from(".t1a", { duration: .3, opacity: 0, x: "-=150" }, "text");
-	tl.from(".t1b", { duration: .3, opacity: 0, x: "-=150" }, "text+=.3");
-	tl.to(".t1", { duration: .2, opacity: 0, x: "+=100" }, "+=3.2");
+	tl.add((0, _commonJs_rtbJs.textX)());
 
-	// tl.from(".zero_middle", {duration:.3, y:`-=${size.h}`}, "+=.2")
-
-	tl.add("bring", "+=.1");
-	tl.from(".bring", { duration: .3, opacity: 0, ease: 'back.out' }, "bring");
-
-	tl.to([".zero", ".green", ".zero_middle"], { duration: .3, opacity: 0 }, "+=1");
-
-	tl.to(".bring", { duration: .3, y: -98, scale: .5 }, "+=.3");
-	tl.from([".text_end"], { duration: .3, opacity: 0 }, "+=.3");
-
-	tl.to(".text_end", { duration: .3, opacity: 0 }, "+=2");
-	tl.from(".cta", { duration: .5, opacity: 0 });
-
-	tl.add("olg", "+=.1");
-	tl.from([".footer"], { duration: .3, opacity: 0 }, "olg");
-	tl.add((0, _commonJsCommonJs.olg)(), "olg");
+	tl.add((0, _commonJs_rtbJs.ss_dbb_end)());
 }
 
 wow();

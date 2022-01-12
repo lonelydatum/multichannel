@@ -227,6 +227,10 @@ img {
   transform-origin: 50% 50%;
 }
 
+.bring_shadow {
+  display: none;
+}
+
 #banner {
   width: 300px;
   height: 250px;

@@ -3,7 +3,7 @@
 
 .bring{
 	// transform-origin: 50% 50%;
-	// @include pos-scale(0, -98, .5);
+	@include pos-scale(0, -98, .5);
 	// @include pos-scale(-150, -125, .5);
 }
 
