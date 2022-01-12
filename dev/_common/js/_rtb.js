@@ -23,7 +23,7 @@ function start(){
 	
 	
 
-	tl.add(zero())
+	tl.add(zeroSlideX())
 	tl.from(".proline", {duration:.3, opacity:0, y:"-=50"}, "+=.1")
 	tl.to(".proline", {duration:.3, opacity:0, y:"+=100"}, "+=.9")
 
