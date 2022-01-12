@@ -12,3 +12,12 @@
 	@include pos(-2, 26);
 	// opacity: .5 !important;
 }
+
+
+
+
+#legalBtn{	
+	@include pos(650, 45);	
+	width: 80px;
+	// opacity: 1 !important;
+}
