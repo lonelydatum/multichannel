@@ -97,8 +97,8 @@ function lb_mobile() {
 	var tl = (0, _commonJs.init)();
 
 	tl.add("zero", .3);
-	tl.from(".zero.left", { duration: .4, x: "-=100" }, "zero");
-	tl.from(".zero.right", { duration: .4, x: "+=100" }, "zero");
+	tl.from(".zero.left", { opacity: 0, duration: .4, x: "-=100" }, "zero");
+	tl.from(".zero.right", { opacity: 0, duration: .4, x: "+=100" }, "zero");
 	tl.from(".proline", { duration: .4, y: "-=80", opacity: 0 });
 
 	tl.to(".proline", { duration: .4, opacity: 0, y: "+=" + _commonJs.size.h }, "+=1");
