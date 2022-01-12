@@ -73,8 +73,26 @@ function textX() {
 	return tl;
 }
 
-function ss_dbb_end() {
-	var tl = new TimelineMax();
+function vertical() {
+	var tl = (0, _commonJs.init)();
+
+	tl.add(zeroSlideX());
+
+	tl.from(".proline", { duration: .3, opacity: 0 }, "+=.1");
+	tl.from(".green", { duration: .1, opacity: 0 });
+
+	if (olg_var.size === "160x600") {
+		tl.to([".zero.left", ".zero.right"], { duration: .3, opacity: 0 }, "+=.9");
+		tl.from(".zero_middle", { duration: .4, opacity: 0 });
+		tl.add(textX());
+	}
+
+	if (olg_var.size === "300x600") {
+		tl.add(textX());
+		tl.to([".zero.left", ".zero.right"], { duration: .3, opacity: 0 });
+		tl.from(".zero_middle", { duration: .4, opacity: 0 });
+	}
+
 	tl.from(".bring", { duration: .3, x: "-=100", opacity: 0 });
 
 	tl.to([".zero", ".green", ".zero_middle"], { duration: .3, opacity: 0 }, "+=1.5");
@@ -132,7 +150,7 @@ function lb_mobile() {
 	// tl.play("end")
 }
 
-module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, ss_dbb_end: ss_dbb_end, dashMove: dashMove, lb_mobile: lb_mobile };
+module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, vertical: vertical, dashMove: dashMove, lb_mobile: lb_mobile };
 
 },{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
