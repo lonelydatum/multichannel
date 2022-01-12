@@ -120,17 +120,33 @@ function lb_mobile(){
 
 	tl.from(".bring", {duration:.3, y:`-=${size.h}`})
 
-	tl.add("end", "+=1")
-	tl.to(".zero", {duration:.3, opacity:0}, "end")
-	tl.to(".bring", {duration:.3, x:0, y:0, scale:.5}, "end")
+	tl.add("end")
+	tl.to(".zero", {duration:.3, opacity:0}, "+=1")
+	if(olg_var.size==="970x250"){
+		tl.to(".bring", {duration:.3, x:0, y:-18, scale:.5})			
+		tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0})
+		tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")	
+		tl.to([".proline_small", ".bring"], {duration:.3, x:0, y:0, scale:.5})
+	}else{
+		tl.to([".proline_small", ".bring"], {duration:.3, x:0, y:0, scale:.5})
+		tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0})
+		tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")	
 
-	tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0}, "+=.3")
-	tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")
+	}
+
+
+	
+	
+	
+		
 	tl.from(".cta", {duration:.5, opacity:0})
+	
 
 	tl.add("olg", "+=.1")
 	tl.from([".footer"], {duration:.3, opacity:0}, "olg")
 	tl.add(olg(), "olg")
+
+	// tl.play("end")
 }
 
 

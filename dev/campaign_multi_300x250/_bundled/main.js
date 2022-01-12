@@ -18,9 +18,9 @@ function start() {
 function bring() {
 	var tl = new TimelineMax();
 	tl.from(".zero", { duration: .3, scale: 1, ease: 'back.out' });
-	tl.from(".bring", { duration: .3, opacity: 0, x: "-=100" }, .8);
-	if (olg_var.var2 === "300x600") {
-		tl.from(".bring_shadow", { duration: .3, opacity: 0, x: "-=100" }, .6);
+	tl.from(".bring", { duration: .3, opacity: 0, x: "-=100" }, 1.6);
+	if (olg_var.size === "300x600") {
+		tl.from(".bring_shadow", { duration: .3, opacity: 0 }, 1.5);
 	}
 	return tl;
 }
