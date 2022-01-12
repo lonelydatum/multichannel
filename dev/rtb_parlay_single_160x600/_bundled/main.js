@@ -54,8 +54,8 @@ function start() {
 function zeroSlideX() {
 	var tl = new TimelineMax();
 	tl.add("zero", .3);
-	tl.from(".zero.left", { duration: .4, x: "-=100" }, "zero");
-	tl.from(".zero.right", { duration: .4, x: "+=100" }, "zero");
+	tl.from(".zero.left", { duration: .4, x: "-=" + _commonJs.size.w / 2, opacity: 0 }, "zero");
+	tl.from(".zero.right", { duration: .4, x: "+=" + _commonJs.size.w / 2, opacity: 0 }, "zero");
 
 	return tl;
 }
