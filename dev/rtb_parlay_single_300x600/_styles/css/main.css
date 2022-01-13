@@ -266,6 +266,17 @@ img {
   position: absolute;
 }
 
+#legalBtn {
+  -webkit-transform: translate(126px, 555px);
+  -ms-transform: translate(126px, 555px);
+  transform: translate(126px, 555px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
 .proline_small {
   display: none;
 }
