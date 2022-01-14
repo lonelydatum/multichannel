@@ -1,0 +1,11 @@
+@import '../../../_common/styles/campaign.scss';
+@import '../../../_common/styles/300x250.scss';
+
+
+
+
+
+#legalBtn{	
+	@include pos(60, 224);	
+	width: 50%;
+}
