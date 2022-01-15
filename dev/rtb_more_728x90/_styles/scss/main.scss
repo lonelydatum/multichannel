@@ -1,0 +1,13 @@
+@import '../../../_common/styles/rtb.scss';
+@import '../../../_common/styles/728x90.scss';
+
+.bring{
+	
+	@include pos-scale(188, 0, .5);
+	// @include pos-scale(-150, -125, .5);
+}
+
+#legalBtn{	
+	@include pos(690, 36);
+	// opacity: 1;
+}

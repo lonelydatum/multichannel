@@ -1,0 +1,14 @@
+@import '../../../_common/styles/rtb.scss';
+@import '../../../_common/styles/320x50.scss';
+
+.bring{
+	// transform-origin: 50% 50%;
+	@include pos-scale(69, -3, .56);
+
+	// @include pos-scale(-150, -125, .5);
+}
+
+#legalBtn{	
+	@include pos(690, 36);
+	// opacity: 1;
+}
