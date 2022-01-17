@@ -3,8 +3,9 @@
 
 .bring{
 	
-	@include pos-scale(188, 0, .5);
-	// @include pos-scale(-150, -125, .5);
+	transform-origin: 400px 90px;
+	@include pos-scale(-13, -44, .5);
+	// @include pos-scale(-200, -44, .5);
 }
 
 #legalBtn{	

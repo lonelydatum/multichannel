@@ -2,11 +2,11 @@
 @import '../../../_common/styles/970x250.scss';
 
 .bring{
+	transform-origin: 600px 250px;
+	@include pos-scale(-119, -123, .5);
+	// @include pos-scale(-300, -142, .5);
+	// @include pos-scale(-165, -123, .5);
 	
-	@include pos-scale(181, 0, .5);
-	// @include pos-scale(0, -18, .5);
-	// @include pos-scale(0, 0, .5);
-	// @include pos-scale(-150, -125, .5);
 }
 
 .proline_small{

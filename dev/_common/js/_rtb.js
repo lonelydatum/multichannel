@@ -100,14 +100,13 @@ function vertical(dashSpeed){
 		tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0}, "+=.9")
 		tl.from(".zero_middle", {duration:.4, opacity:0})
 		tl.add(textX())
-		tl.from(".bring", {duration:.3, x:"-=100", opacity:0})
+		tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
 	}
 
 	if(olg_var.size==="300x600"){
 		tl.add(textX(), "+=.5")
-		// tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0})	
 		tl.from(".zero_middle", {duration:.4, opacity:0})
-		tl.from(".bring", {duration:.3, x:"-=100", opacity:0}, "+=.3")
+		tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
 	}
 
 	
@@ -117,7 +116,7 @@ function vertical(dashSpeed){
 
 	tl.to([".zero", ".green", ".zero_middle"], {duration:.3, opacity:0}, "+=1.5")
 
-	tl.from(".bring", {duration:.3, y:0, scale:.5}, "+=.3")
+	tl.to(".bring", {duration:.3, y:-size.h/2, x:-size.w/2, scale:.5}, "+=.3")
 	tl.from(".text_end", {duration:.3, opacity:0}, "+=.1")
 
 	
@@ -127,6 +126,7 @@ function vertical(dashSpeed){
 	tl.add("olg", "+=.1")
 	tl.from([".footer"], {duration:.3, opacity:0}, "olg")
 	tl.add(olg(), "olg")
+	// tl.play(4)
 	return tl
 }
 
@@ -140,7 +140,7 @@ function lb_mobile(dashSpeed=.6){
 	tl.from(".zero.right", {opacity:0, duration:.4, x:"+=100"}, "zero")
 	tl.from(".proline", {duration:.4, y:"-=80", opacity:0})
 
-	tl.to(".proline", {duration:.4, opacity:0, y:`+=${size.h}`}, "+=1")
+	tl.to(".proline", {duration:.4, opacity:0, y:`+=${size.h*.6}`}, "+=1")
 
 
 	tl.add("text")
@@ -148,17 +148,28 @@ function lb_mobile(dashSpeed=.6){
 	tl.from(".t1b", {duration:.3, opacity:0, y:`+=${size.h}`}, "text")
 	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, "+=3.2")
 
-	tl.from(".bring", {duration:.3, y:`-=${size.h}`})
+	
+	tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
 
 	tl.add("end")
 	tl.to(".zero", {duration:.3, opacity:0}, "+=1")
 	if(olg_var.size==="970x250"){
-		tl.to(".bring", {duration:.3, x:0, y:-18, scale:.5})			
+		tl.to(".bring", {duration:.3, x:-300, y:-142, scale:.5})
+		
 		tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0})
 		tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")	
-		tl.to([".proline_small", ".bring"], {duration:.3, x:0, y:0, scale:.5})
+		tl.add("ender970")
+		tl.to([".proline_small"], {duration:.2, x:0, y:0, scale:.5}, "ender970")
+		tl.to(".bring", {duration:.2, y:-123, scale:.5}, "ender970")
 	}else{
-		tl.to([".proline_small", ".bring"], {duration:.3, x:0, y:0, scale:.5})
+		tl.add("ender")
+		tl.to(".proline_small", {duration:.3, x:0, y:0, scale:.5}, "ender")
+		if(olg_var.size==="320x50"){
+			tl.to(".bring", {duration:.3, x:-75, y:-25, scale:.5}, "ender")
+		}
+		if(olg_var.size==="728x90"){
+			tl.to(".bring", {duration:.3, x:-198, scale:.5}, "ender")
+		}
 		tl.from([".text_end", ".proline_small"], {duration:.3, opacity:0})
 		tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")	
 
@@ -176,7 +187,7 @@ function lb_mobile(dashSpeed=.6){
 	tl.from([".footer"], {duration:.3, opacity:0}, "olg")
 	tl.add(olg(), "olg")
 
-	// tl.play("end")
+	// tl.play(5)
 }
 
 

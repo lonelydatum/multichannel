@@ -2,9 +2,9 @@
 @import '../../../_common/styles/160x600.scss';
 
 .bring{
-	// transform-origin: 50% 50%;
-	@include pos-scale(0, -98, .5);
-	// @include pos-scale(-150, -125, .5);
+	transform-origin: 160px 600px;
+	@include pos-scale(-80, -203, 0.5);
+	// @include pos-scale(0, -98, .5);
 }
 
 #legalBtn{	

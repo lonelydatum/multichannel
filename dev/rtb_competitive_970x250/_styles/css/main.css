@@ -257,9 +257,12 @@ img {
 }
 
 .bring {
-  -webkit-transform: translate(181px, 0px) scale(0.5, 0.5);
-  -ms-transform: translate(181px, 0px) scale(0.5, 0.5);
-  transform: translate(181px, 0px) scale(0.5, 0.5);
+  -webkit-transform-origin: 600px 250px;
+  -ms-transform-origin: 600px 250px;
+  transform-origin: 600px 250px;
+  -webkit-transform: translate(-119px, -123px) scale(0.5, 0.5);
+  -ms-transform: translate(-119px, -123px) scale(0.5, 0.5);
+  transform: translate(-119px, -123px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
