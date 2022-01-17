@@ -61,9 +61,16 @@ function vertical(){
 	tl.to([".zero"],  {duration:.3, opacity:0, x:"+=100"}, "+=1.2")
 	tl.add(chev())
 
-	tl.to(".chev_2",  {duration:.3, opacity:0}, "+=.5")
+	tl.to(".chev_2a",  {duration:.3, opacity:0}, "+=.5")	
+	tl.from([".proline"],  {duration:.3, opacity:0})
+
+	tl.to(".chev_2b",  {duration:.3, opacity:0}, "+=.5")	
+	tl.from([".cta"],  {duration:.3, opacity:0}, "+=.2")
 	
-	tl.add(end())
+	tl.add("end", "+=.3")
+
+	tl.add(olg(), "end")
+	tl.from(".footer",  {duration:.5, opacity:0}, "end")
 
 }
 

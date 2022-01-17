@@ -229,7 +229,7 @@ module.exports = { olg: olg };
 
 var _commonJs_rtbJs = require('../../_common/js/_rtb.js');
 
-(0, _commonJs_rtbJs.lb_mobile)(.7);
+(0, _commonJs_rtbJs.lb_mobile)(.4);
 
 },{"../../_common/js/_rtb.js":1}]},{},[4])
 
