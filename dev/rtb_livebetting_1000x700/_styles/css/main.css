@@ -253,7 +253,7 @@ img {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  opacity: 1 !important;
+  opacity: 0;
 }
 
 .bring {
