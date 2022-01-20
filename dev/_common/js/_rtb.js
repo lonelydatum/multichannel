@@ -150,6 +150,8 @@ function vertical(dashSpeed){
 		verticalSS(dashSpeed)
 		return 
 	}
+	TweenLite.set(".zero_middle", {transformOrigin:"50% 50%", x:-150, y:-300})
+
 	dashMove(dashSpeed)
 	const tl = init()
 
@@ -174,7 +176,7 @@ function vertical(dashSpeed){
 	tl.to([".zero_middle"], {duration:.3, x:-150, y:-459, scale:.27}, "middle")
 
 
-	// tl.to(".bring", {duration:.3, y:-size.h/2, x:-size.w/2, scale:.5}, "+=.3")
+	
 	tl.from(".text_end", {duration:.3, opacity:0}, "+=.1")
 
 	
