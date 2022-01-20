@@ -12,6 +12,10 @@ if(olg_var.size==="160x600"){
 	TweenLite.set("#legalBtn", {x:86, y:546})	
 }
 
+if(olg_var.size==="300x600"){
+	TweenLite.set("#legalBtn", {x:216, y:535})	
+}
+
 function dashMove(amt=1.2){
 	console.log(amt);
 	TweenLite.set(".bottom_1", {x:0})
@@ -152,29 +156,25 @@ function vertical(dashSpeed){
 	tl.add(zeroSlideX())	
 	
 	tl.from(".proline", {duration:.3, opacity:0}, "+=.1")
+	
+
+	
+
+	tl.add(textX(), "+=.5")
+	tl.from(".zero_middle", {duration:.4, opacity:0})
 	tl.from(".green", {duration:.1, opacity:0})
-
-	if(olg_var.size==="160x600"){
-		tl.to([".zero.left", ".zero.right"], {duration:.3, opacity:0}, "+=.9")
-		tl.from(".zero_middle", {duration:.4, opacity:0})
-		tl.add(textX())
-		tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
-	}
-
-	if(olg_var.size==="300x600"){
-		tl.add(textX(), "+=.5")
-		tl.from(".zero_middle", {duration:.4, opacity:0})
-		tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
-	}
-
-	
+	tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
 
 
 	
 
-	tl.to([".zero", ".green", ".zero_middle"], {duration:.3, opacity:0}, "+=1.5")
 
-	tl.to(".bring", {duration:.3, y:-size.h/2, x:-size.w/2, scale:.5}, "+=.3")
+	tl.add("middle", "+=1.5")
+	tl.to(".green", {duration:.1, opacity:0}, "middle")
+	tl.to([".zero_middle"], {duration:.3, x:-150, y:-459, scale:.27}, "middle")
+
+
+	// tl.to(".bring", {duration:.3, y:-size.h/2, x:-size.w/2, scale:.5}, "+=.3")
 	tl.from(".text_end", {duration:.3, opacity:0}, "+=.1")
 
 	

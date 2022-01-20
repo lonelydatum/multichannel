@@ -3,11 +3,11 @@
 
 .bring{
 	transform-origin: 300px 600px;
-	@include pos-scale(-150, -235, 0.5);	
+	@include pos-scale(-150, -300, 0.5);	
 }
 
 #legalBtn{	
-	@include pos(126, 555);
+	@include pos(216, 535);
 	// opacity: 1;
 }
 
@@ -18,4 +18,10 @@
 
 .proline_small{
 	display: none;
+}
+
+.zero_middle{
+	transform-origin: 300px 600px;
+	@include pos-scale(-150, -300, 0.5);	
+	// @include pos-scale(-150, -459, 0.27);	
 }

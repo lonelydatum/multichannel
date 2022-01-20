@@ -263,9 +263,9 @@ img {
   -webkit-transform-origin: 300px 600px;
   -ms-transform-origin: 300px 600px;
   transform-origin: 300px 600px;
-  -webkit-transform: translate(-150px, -235px) scale(0.5, 0.5);
-  -ms-transform: translate(-150px, -235px) scale(0.5, 0.5);
-  transform: translate(-150px, -235px) scale(0.5, 0.5);
+  -webkit-transform: translate(-150px, -300px) scale(0.5, 0.5);
+  -ms-transform: translate(-150px, -300px) scale(0.5, 0.5);
+  transform: translate(-150px, -300px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -274,9 +274,9 @@ img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(126px, 555px);
-  -ms-transform: translate(126px, 555px);
-  transform: translate(126px, 555px);
+  -webkit-transform: translate(216px, 535px);
+  -ms-transform: translate(216px, 535px);
+  transform: translate(216px, 535px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -286,6 +286,20 @@ img {
 
 .proline_small {
   display: none;
+}
+
+.zero_middle {
+  -webkit-transform-origin: 300px 600px;
+  -ms-transform-origin: 300px 600px;
+  transform-origin: 300px 600px;
+  -webkit-transform: translate(-150px, -300px) scale(0.5, 0.5);
+  -ms-transform: translate(-150px, -300px) scale(0.5, 0.5);
+  transform: translate(-150px, -300px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */
