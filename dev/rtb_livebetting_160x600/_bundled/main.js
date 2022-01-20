@@ -3,6 +3,15 @@
 
 var _commonJs = require('./common.js');
 
+TweenLite.set("#legalBtn", { opacity: 0 });
+if (olg_var.size === "300x250") {
+	TweenLite.set("#legalBtn", { x: 260, y: 195 });
+}
+
+if (olg_var.size === "160x600") {
+	TweenLite.set("#legalBtn", { x: 86, y: 546 });
+}
+
 function dashMove() {
 	var amt = arguments.length <= 0 || arguments[0] === undefined ? 1.2 : arguments[0];
 
@@ -81,7 +90,42 @@ function textX() {
 	return tl;
 }
 
+function verticalSS(dashSpeed) {
+	dashMove(dashSpeed);
+	var tl = (0, _commonJs.init)();
+
+	TweenLite.set([".zero.right", ".zero.left"], { display: "none" });
+	TweenLite.set([".zero_middle"], { y: 97 });
+	TweenLite.set(".bring", { x: -80, y: -300 });
+
+	// tl.add(zeroSlideX())	
+
+	tl.from(".proline", { duration: .3, opacity: 0 }, "+=.1");
+	tl.from(".green", { duration: .1, opacity: 0 });
+
+	tl.to(".zero_middle", { duration: .4, y: 0 }, "+=1");
+	tl.add(textX());
+	tl.from(".bring", { duration: .25, opacity: 0, scale: 1, ease: 'back.out' });
+
+	// tl.to([".zero", ".green", ".zero_middle"], {duration:.3, opacity:0}, "+=1.5")
+
+	tl.from(".text_end", { duration: .3, opacity: 0 }, "+=.3");
+
+	tl.to(".text_end", { duration: .3, opacity: 0 }, "+=2");
+	tl.from(".cta", { duration: .5, opacity: 0 });
+
+	tl.add("olg", "+=.1");
+	tl.from([".footer"], { duration: .3, opacity: 0 }, "olg");
+	tl.add((0, _commonJs.olg)(), "olg");
+	// tl.play(4)
+	return tl;
+}
+
 function vertical(dashSpeed) {
+	if (olg_var.size === "160x600") {
+		verticalSS(dashSpeed);
+		return;
+	}
 	dashMove(dashSpeed);
 	var tl = (0, _commonJs.init)();
 
@@ -170,7 +214,7 @@ function lb_mobile() {
 	// tl.play(5)
 }
 
-module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, vertical: vertical, dashMove: dashMove, lb_mobile: lb_mobile };
+module.exports = { start: start, zeroSlideX: zeroSlideX, textX: textX, vertical: vertical, dashMove: dashMove, lb_mobile: lb_mobile, verticalSS: verticalSS };
 
 },{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
