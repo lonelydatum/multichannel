@@ -16,6 +16,8 @@ if(olg_var.size==="300x600"){
 	TweenLite.set("#legalBtn", {x:216, y:535})	
 }
 
+const readT1 = olg_var.var1==="single" ? 2 : 2.8
+
 function dashMove(amt=1.2){
 	console.log(amt);
 	TweenLite.set(".bottom_1", {x:0})
@@ -46,7 +48,8 @@ function start(dash=1.5){
 	tl.add("text")
 	tl.from(".t1a", {duration:.3, opacity:0, y:"-=150"}, "text")
 	tl.from(".t1b", {duration:.3, opacity:0, y:"+=150"}, "text")
-	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, "+=3.2")
+	console.log(readT1);
+	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, `+=${readT1}`)
 
 
 	tl.from(".zero_middle", {duration:.3, y:`-=${size.h}`}, "+=.2")
@@ -89,14 +92,17 @@ function textX(){
 	tl.from(".t1a", {duration:.3, opacity:0, x:"-=100"}, "text")
 	tl.from(".t1b", {duration:.3, opacity:0, x:"+=100"}, "text")
 	
+	
+	console.log(time);
 	if(olg_var.size==="300x600"){
-		tl.add("slideout", "+=2.8")
+		tl.add("slideout", `+=${readT1}`)
 		tl.to(".zero.left", {duration:.4, x:`-=${size.w/2}`, opacity:0}, "slideout")
 		tl.to(".zero.right", {duration:.4, x:`+=${size.w/2}`, opacity:0}, "slideout")
 		tl.to([".t1", ".green"], {duration:.2, opacity:0}, "slideout")
 	}else{
-		tl.to([".t1", ".green", ".zero.left", ".zero.right"], {duration:.2, opacity:0}, "+=2.8")
+		tl.to([".t1", ".green", ".zero.left", ".zero.right"], {duration:.2, opacity:0}, `+=${readT1}`)
 	}
+
 	return tl
 }
 
@@ -206,7 +212,7 @@ function lb_mobile(dashSpeed=.6){
 	tl.add("text")
 	tl.from(".t1a", {duration:.3, opacity:0, y:`-=${size.h}`}, "text")
 	tl.from(".t1b", {duration:.3, opacity:0, y:`+=${size.h}`}, "text")
-	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, "+=3.2")
+	tl.to(".t1", {duration:.2, opacity:0, y:"+=70"}, `+=${readT1}`)
 
 	
 	tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
