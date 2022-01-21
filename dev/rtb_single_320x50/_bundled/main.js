@@ -21,7 +21,6 @@ var readT1 = olg_var.var1 === "single" ? 2 : 2.8;
 function dashMove() {
 	var amt = arguments.length <= 0 || arguments[0] === undefined ? 1.2 : arguments[0];
 
-	console.log(amt);
 	TweenLite.set(".bottom_1", { x: 0 });
 	TweenLite.set(".bottom_2", { x: 1 * _commonJs.size.w });
 	TweenLite.set(".bottom_3", { x: 2 * _commonJs.size.w });
@@ -47,7 +46,7 @@ function start() {
 	tl.add("text");
 	tl.from(".t1a", { duration: .3, opacity: 0, y: "-=150" }, "text");
 	tl.from(".t1b", { duration: .3, opacity: 0, y: "+=150" }, "text");
-	console.log(readT1);
+
 	tl.to(".t1", { duration: .2, opacity: 0, y: "+=70" }, "+=" + readT1);
 
 	tl.from(".zero_middle", { duration: .3, y: "-=" + _commonJs.size.h }, "+=.2");
@@ -86,7 +85,6 @@ function textX() {
 	tl.from(".t1a", { duration: .3, opacity: 0, x: "-=100" }, "text");
 	tl.from(".t1b", { duration: .3, opacity: 0, x: "+=100" }, "text");
 
-	console.log(time);
 	if (olg_var.size === "300x600") {
 		tl.add("slideout", "+=" + readT1);
 		tl.to(".zero.left", { duration: .4, x: "-=" + _commonJs.size.w / 2, opacity: 0 }, "slideout");
