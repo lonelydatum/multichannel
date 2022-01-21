@@ -91,8 +91,8 @@ function horizontal(){
 
 	tl.from(".proline",  {duration:.5, opacity:0})
 	tl.from(".cta",  {duration:.5, opacity:0})
-	tl.add(olg())
-	tl.from(".footer",  {duration:.5, opacity:0})
+	tl.add(olg(), "end")
+	tl.from(".footer",  {duration:.5, opacity:0}, "end")
 
 
 }
