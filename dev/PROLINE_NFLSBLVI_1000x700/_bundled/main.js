@@ -3,7 +3,28 @@
 
 var _commonJs_campaignJs = require('../../_common/js/_campaign.js');
 
-(0, _commonJs_campaignJs.start)();
+function superbowl() {
+	var tl = (0, _commonJs_campaignJs.init)();
+	tl.from(".zero", { duration: .3, scale: 1, ease: 'back.out' });
+	tl.from(".proline", { duration: .3, x: "-=100", opacity: 0 }, "+=1");
+	tl.to(".proline", { duration: .3, x: "+=100", opacity: 0 }, "+=1");
+	tl.from(".bring", { duration: .3, x: "-=100", opacity: 0 });
+	tl.to([".zero"], { duration: .3, x: "+=100", opacity: 0 }, "+=1");
+	tl.add((0, _commonJs_campaignJs.chev)());
+
+	tl.from(".txt", { duration: .3, opacity: 0 });
+	tl.to([".chev", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+
+	tl.from(".end", { duration: .3, opacity: 0 }, "+=.2");
+	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.5");
+
+	tl.add("end", "+=.3");
+
+	tl.add((0, _commonJs_campaignJs.olg)(), "end");
+	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
+}
+
+superbowl();
 
 },{"../../_common/js/_campaign.js":2}],2:[function(require,module,exports){
 "use strict";
@@ -107,7 +128,13 @@ function superbowl() {
 
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.5");
 	tl.from(".txt", { duration: .3, opacity: 0 });
-	tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	if (olg_var.size === "160x600") {
+		tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
+
+	if (olg_var.size === "300x600") {
+		tl.to([".chev_1a", ".txt"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
 
 	tl.from(".end", { duration: .3, opacity: 0 }, "+=.2");
 	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.5");
@@ -120,7 +147,7 @@ function superbowl() {
 
 // tl.play("end")
 
-module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl };
+module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl, olg: _commonJs.olg, init: _commonJs.init };
 
 },{"./common.js":3}],3:[function(require,module,exports){
 'use strict';
@@ -144,7 +171,7 @@ var h = size.h;
 
 function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
-			TweenLite.set("#legalBtn", { display: "block" });
+			TweenLite.set(["#legalBtn", "#legalContent"], { display: "block" });
 		} });
 	tl.set(".frame1", { opacity: 1 });
 	tl.set("#legalBtn", { zIndex: 100 });

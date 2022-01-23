@@ -109,7 +109,13 @@ function superbowl() {
 
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.5");
 	tl.from(".txt", { duration: .3, opacity: 0 });
-	tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	if (olg_var.size === "160x600") {
+		tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
+
+	if (olg_var.size === "300x600") {
+		tl.to([".chev_1a", ".txt"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
 
 	tl.from(".end", { duration: .3, opacity: 0 }, "+=.2");
 	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.5");
@@ -122,7 +128,7 @@ function superbowl() {
 
 // tl.play("end")
 
-module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl };
+module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl, olg: _commonJs.olg, init: _commonJs.init };
 
 },{"./common.js":3}],3:[function(require,module,exports){
 'use strict';
@@ -146,7 +152,7 @@ var h = size.h;
 
 function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
-			TweenLite.set("#legalBtn", { display: "block" });
+			TweenLite.set(["#legalBtn", "#legalContent"], { display: "block" });
 		} });
 	tl.set(".frame1", { opacity: 1 });
 	tl.set("#legalBtn", { zIndex: 100 });

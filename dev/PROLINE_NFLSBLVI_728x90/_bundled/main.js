@@ -5,7 +5,30 @@ var _commonJs_campaignJs = require('../../_common/js/_campaign.js');
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJs_campaignJs.horizontal)();
+function superbowl_long() {
+	var tl = (0, _commonJsCommonJs.init)();
+
+	tl.add("o_in");
+	tl.from(".zero_left", { duration: .5, opacity: 0, x: "-=200" }, "o_in");
+	tl.from(".zero_right", { duration: .5, opacity: 0, x: "+=200" }, "o_in");
+
+	tl.from(".proline", { duration: .3, opacity: 0, y: '-=' + _commonJsCommonJs.size.h });
+	tl.to(".proline", { duration: .3, opacity: 0, y: '+=' + _commonJsCommonJs.size.h }, "+=1");
+
+	tl.from(".bring", { duration: .3, opacity: 0, y: '-=' + _commonJsCommonJs.size.h });
+
+	tl.to(".bring", { duration: .3, opacity: 0, y: '+=' + _commonJsCommonJs.size.h }, "+=1");
+
+	tl.from(".txt", { duration: .3, opacity: 0, y: '-=' + _commonJsCommonJs.size.h });
+	// tl.to(".txt",  {duration:.3, opacity:0, y:`+=${size.h}`}, "+=2")	
+
+	// tl.from(".proline",  {duration:.5, opacity:0})
+	tl.from(".cta", { duration: .5, opacity: 0 });
+	tl.add((0, _commonJsCommonJs.olg)(), "end");
+	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
+}
+
+superbowl_long();
 
 },{"../../_common/js/_campaign.js":2,"../../_common/js/common.js":3}],2:[function(require,module,exports){
 "use strict";
@@ -109,7 +132,13 @@ function superbowl() {
 
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.5");
 	tl.from(".txt", { duration: .3, opacity: 0 });
-	tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	if (olg_var.size === "160x600") {
+		tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
+
+	if (olg_var.size === "300x600") {
+		tl.to([".chev_1a", ".txt"], { duration: .3, opacity: 0 }, "+=2.5");
+	}
 
 	tl.from(".end", { duration: .3, opacity: 0 }, "+=.2");
 	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.5");
@@ -122,7 +151,7 @@ function superbowl() {
 
 // tl.play("end")
 
-module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl };
+module.exports = { start: start, bring: bring, chev: chev, end: end, vertical: vertical, horizontal: horizontal, superbowl: superbowl, olg: _commonJs.olg, init: _commonJs.init };
 
 },{"./common.js":3}],3:[function(require,module,exports){
 'use strict';
@@ -146,7 +175,7 @@ var h = size.h;
 
 function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
-			TweenLite.set("#legalBtn", { display: "block" });
+			TweenLite.set(["#legalBtn", "#legalContent"], { display: "block" });
 		} });
 	tl.set(".frame1", { opacity: 1 });
 	tl.set("#legalBtn", { zIndex: 100 });

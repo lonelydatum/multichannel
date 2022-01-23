@@ -18,7 +18,8 @@ const {w, h} = size
 
 function init(){	
 	const tl = new TimelineMax({onComplete:()=>{
-		TweenLite.set("#legalBtn", {display:"block"})
+		TweenLite.set(["#legalBtn", "#legalContent"], {display:"block"})
+		
 	}})
 	tl.set(".frame1", {opacity:1})
 	tl.set("#legalBtn", {zIndex:100})

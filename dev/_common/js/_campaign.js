@@ -110,7 +110,14 @@ function superbowl(){
 
 	tl.to(".chev_1b",  {duration:.3, opacity:0}, "+=.5")	
 	tl.from(".txt",  {duration:.3, opacity:0})
-	tl.to([".chev_1a", ".txt", ".bring"],  {duration:.3, opacity:0}, "+=2.5")
+	if(olg_var.size==="160x600"){
+		tl.to([".chev_1a", ".txt", ".bring"],  {duration:.3, opacity:0}, "+=2.5")	
+	}
+
+	if(olg_var.size==="300x600"){
+		tl.to([".chev_1a", ".txt"],  {duration:.3, opacity:0}, "+=2.5")	
+	}
+	
 	
 
 	
@@ -128,5 +135,5 @@ function superbowl(){
 // tl.play("end")
 
 
-module.exports = {start, bring, chev, end, vertical, horizontal, superbowl};
+module.exports = {start, bring, chev, end, vertical, horizontal, superbowl, olg, init};
 

@@ -1,5 +1,10 @@
 @import './common.scss';
 
+#legalBtn:hover ~ #legalContent {
+	opacity: 1;
+	
+}
+
 #banner{
 	background-color: black;
 }

@@ -52,6 +52,7 @@ table {
 }
 
 #legalBtn:hover ~ #legalContent {
+  
   opacity: 1;
 }
 

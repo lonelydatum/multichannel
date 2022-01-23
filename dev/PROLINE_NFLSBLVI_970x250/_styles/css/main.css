@@ -221,6 +221,10 @@ img {
   opacity: 0;
 }
 
+#legalBtn:hover ~ #legalContent {
+  opacity: 1;
+}
+
 #banner {
   background-color: black;
 }
@@ -272,17 +276,6 @@ img {
   position: absolute;
   width: 140px;
   height: 50px;
-}
-
-.bring {
-  -webkit-transform: translate(-124px, -56px) scale(0.78, 0.78);
-  -ms-transform: translate(-124px, -56px) scale(0.78, 0.78);
-  transform: translate(-124px, -56px) scale(0.78, 0.78);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */
