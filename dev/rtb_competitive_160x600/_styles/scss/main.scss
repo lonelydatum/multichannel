@@ -21,15 +21,15 @@
 	display: none;
 }
 
-.zero.left{
-	transform-origin: 0% 50%;
-	@include pos-scale(0, -302, .5);
-	// @include pos-scale(0, -411, .39);
-}
+// .zero.left{
+// 	transform-origin: 0% 50%;
+// 	@include pos-scale(0, -302, .5);
+// 	// @include pos-scale(0, -411, .39);
+// }
 
-.zero.right{
-	transform-origin: 100% 50%;
-	@include pos-scale(-160, -302, .5);
-	// @include pos-scale(-160, -411, .39);
-}
+// .zero.right{
+// 	transform-origin: 100% 50%;
+// 	@include pos-scale(-160, -302, .5);
+// 	// @include pos-scale(-160, -411, .39);
+// }
 

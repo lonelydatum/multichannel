@@ -109,6 +109,8 @@ function textX(){
 
 function verticalSS(dashSpeed){
 	TweenLite.set(".bring", {x:-80, y:-300})
+	TweenLite.set(".zero.left", {transformOrigin:"0% 50%", x:0, y:-302})
+	TweenLite.set(".zero.right", {transformOrigin:"100% 50%", x:-160, y:-302})
 	dashMove(dashSpeed)
 	const tl = init()
 
