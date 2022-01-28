@@ -6,17 +6,25 @@ var _commonJs = require('./common.js');
 TweenLite.set(".zero", { x: -_commonJs.size.w / 2, y: -_commonJs.size.h / 2 });
 
 function start() {
+
 	var tl = (0, _commonJs.init)();
+	tl.from(".zero", { duration: .3, scale: 1, ease: 'back.out' });
+	tl.from(".proline", { duration: .3, x: "-=100", opacity: 0 }, "+=1");
+	tl.to(".proline", { duration: .3, x: "+=100", opacity: 0 }, "+=1");
+	tl.from(".bring", { duration: .3, x: "-=100", opacity: 0 });
+	tl.to([".zero"], { duration: .3, x: "+=100", opacity: 0 }, "+=1");
+	tl.add(chev());
 
-	tl.add(bring());
+	tl.from(".txt", { duration: .3, opacity: 0 });
+	tl.to([".chev", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
 
-	if (olg_var.size === "300x250" || olg_var.size === "300x600") {
-		tl.add(chev(), "+=.7");
-	} else {
-		tl.add(chev());
-	}
+	tl.from(".end", { duration: .3, opacity: 0 }, "+=.2");
+	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.5");
 
-	tl.add(end());
+	tl.add("end", "+=.3");
+
+	tl.add((0, _commonJs.olg)(), "end");
+	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
 }
 
 function bring() {
@@ -52,6 +60,8 @@ function end() {
 }
 
 function vertical() {
+	superbowl();
+	return;
 	var tl = (0, _commonJs.init)();
 	tl.add(bring());
 	tl.to([".zero"], { duration: .3, opacity: 0, x: "+=100" }, "+=1.2");
@@ -100,8 +110,12 @@ function superbowl() {
 
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.5");
 	tl.from(".txt", { duration: .3, opacity: 0 });
-	if (olg_var.size === "160x600") {
-		tl.to([".chev_1a", ".txt", ".bring"], { duration: .3, opacity: 0 }, "+=2.5");
+	tl.add("chevsBye", "+=2.5");
+	tl.to([".chev_1a", ".txt"], { duration: .3, opacity: 0 }, "chevsBye");
+	if (olg_var.name === "PROLINE") {
+		if (olg_var.size === "160x600") {
+			tl.to([".bring"], { duration: .3, opacity: 0 }, "chevsBye");
+		}
 	}
 
 	if (olg_var.size === "300x600") {
