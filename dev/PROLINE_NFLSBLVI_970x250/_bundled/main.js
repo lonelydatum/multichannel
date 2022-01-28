@@ -114,6 +114,10 @@ function vertical() {
 }
 
 function horizontal() {
+	// if(olg_var.size==="320x50"){
+	// 	mobile()
+	// 	return
+	// }
 	var tl = (0, _commonJs.init)();
 
 	tl.add("o_in");
@@ -165,6 +169,30 @@ function superbowl() {
 
 	tl.add("end", "+=.3");
 
+	tl.add((0, _commonJs.olg)(), "end");
+	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
+}
+
+function mobile() {
+	var tl = (0, _commonJs.init)();
+
+	tl.add("o_in");
+	tl.from(".zero_left", { duration: .5, opacity: 0, x: "-=200" }, "o_in");
+	tl.from(".zero_right", { duration: .5, opacity: 0, x: "+=200" }, "o_in");
+
+	tl.from(".proline", { duration: .3, opacity: 0, y: "-=" + _commonJs.size.h });
+	tl.to(".proline", { duration: .3, opacity: 0, y: "+=" + _commonJs.size.h }, "+=1");
+
+	tl.from(".bring", { duration: .3, opacity: 0, y: "-=" + _commonJs.size.h });
+	tl.to(".bring", { duration: .3, opacity: 0, y: "+=" + _commonJs.size.h }, "+=1");
+
+	tl.from(".txt", { duration: .3, opacity: 0, y: "-=" + _commonJs.size.h });
+	tl.to(".txt", { duration: .3, opacity: 0, y: "+=" + _commonJs.size.h }, "+=2");
+
+	tl.from(".end", { duration: .3, opacity: 0, y: "-=" + _commonJs.size.h });
+
+	// tl.from(".proline",  {duration:.5, opacity:0})
+	tl.from(".cta", { duration: .5, opacity: 0 }, "+=.5");
 	tl.add((0, _commonJs.olg)(), "end");
 	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
 }
