@@ -1,0 +1,35 @@
+@import '../../../_common/styles/rtb.scss';
+@import '../../../_common/styles/160x600.scss';
+
+.bring{
+	transform-origin: 160px 600px;
+	@include pos-scale(-80, -203, 0.5);
+	// @include pos-scale(0, -98, .5);
+}
+
+#legalBtn{	
+	@include pos(86, 546);	
+	// opacity: 1;
+}
+
+
+.green{
+	display: none;
+}
+
+.proline_small{
+	display: none;
+}
+
+.zero.left{
+	transform-origin: 0% 50%;
+	@include pos-scale(0, -302, .5);
+	// @include pos-scale(0, -411, .39);
+}
+
+.zero.right{
+	transform-origin: 100% 50%;
+	@include pos-scale(-160, -302, .5);
+	// @include pos-scale(-160, -411, .39);
+}
+

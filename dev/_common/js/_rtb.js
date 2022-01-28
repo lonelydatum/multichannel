@@ -108,46 +108,35 @@ function textX(){
 
 
 function verticalSS(dashSpeed){
+	TweenLite.set(".bring", {x:-80, y:-300})
 	dashMove(dashSpeed)
 	const tl = init()
 
-	TweenLite.set([".zero.right", ".zero.left"], {display:"none"})
-	TweenLite.set([".zero_middle"], {y:97})
-	TweenLite.set(".bring", {x:-80, y:-300})
+	tl.add(zeroSlideX())	
 
 	
-
-	// tl.add(zeroSlideX())	
+	
 	
 	tl.from(".proline", {duration:.3, opacity:0}, "+=.1")
-	tl.from(".green", {duration:.1, opacity:0})
+	tl.to([".zero.right", ".zero.left"], {duration:.3, y:-411, scale:.39}, "+=1")
+	// tl.from(".green", {duration:.1, opacity:0})
 
-	tl.to(".zero_middle", {duration:.4, y:0}, "+=1")
-	tl.add(textX())
+	// tl.to(".zero_middle", {duration:.4, y:0}, "+=1")
+	tl.add("text")
+	tl.from(".t1a", {duration:.3, opacity:0, x:"-=100"}, "text")
+	tl.from(".t1b", {duration:.3, opacity:0, x:"+=100"}, "text")
+	tl.to([".t1", ".green"], {duration:.2, opacity:0}, `+=${readT1}`)
+
 	tl.from(".bring", {duration:.25, opacity:0, scale:1, ease:'back.out'})
 
-
-
 	
-
-	
-
-
-	
-
-	// tl.to([".zero", ".green", ".zero_middle"], {duration:.3, opacity:0}, "+=1.5")
-
-	
-	tl.from(".text_end", {duration:.3, opacity:0}, "+=.3")
-
-	
+	tl.from(".text_end", {duration:.3, opacity:0}, "+=.3")	
 	tl.to(".text_end", {duration:.3, opacity:0 }, "+=2")
 	tl.from(".cta", {duration:.5, opacity:0})
 
 	tl.add("olg", "+=.1")
 	tl.from([".footer"], {duration:.3, opacity:0}, "olg")
 	tl.add(olg(), "olg")
-	// tl.play(4)
 	return tl
 }
 
