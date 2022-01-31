@@ -175,6 +175,9 @@ function vertical(dashSpeed){
 	}
 
 	if(olg_var.size==="160x600"){
+		TweenLite.set([".bring"], {transformOrigin:"50% 50%", x:-size.w/2, y:-size.h/2})
+		// transform-origin: 160px 600px;
+		// @include pos-scale(-80, -300, 0.5);
 		tl.to([".zero_middle"], {duration:.3, x:-80, y:-442, scale:.27}, "middle")
 	}
 

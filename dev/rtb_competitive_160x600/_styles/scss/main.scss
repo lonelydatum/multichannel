@@ -2,8 +2,7 @@
 @import '../../../_common/styles/160x600.scss';
 
 .bring{
-	transform-origin: 160px 600px;
-	@include pos-scale(-80, -300, 0.5);
+	
 	// @include pos-scale(0, -98, .5);
 }
 
