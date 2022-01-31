@@ -143,11 +143,11 @@ function verticalSS(dashSpeed){
 }
 
 function vertical(dashSpeed){
-	if(olg_var.size==="160x600"){
-		verticalSS(dashSpeed)
-		return 
-	}
-	TweenLite.set(".zero_middle", {transformOrigin:"50% 50%", x:-150, y:-300})
+	// if(olg_var.size==="160x600"){
+	// 	verticalSS(dashSpeed)
+	// 	return 
+	// }
+	TweenLite.set(".zero_middle", {transformOrigin:"50% 50%", x:-size.w/2, y:-size.h/2})
 
 	dashMove(dashSpeed)
 	const tl = init()
@@ -170,7 +170,13 @@ function vertical(dashSpeed){
 
 	tl.add("middle", "+=1.5")
 	tl.to(".green", {duration:.1, opacity:0}, "middle")
-	tl.to([".zero_middle"], {duration:.3, x:-150, y:-459, scale:.27}, "middle")
+	if(olg_var.size==="300x600"){
+		tl.to([".zero_middle"], {duration:.3, x:-150, y:-459, scale:.27}, "middle")
+	}
+
+	if(olg_var.size==="160x600"){
+		tl.to([".zero_middle"], {duration:.3, x:-80, y:-442, scale:.27}, "middle")
+	}
 
 
 	
