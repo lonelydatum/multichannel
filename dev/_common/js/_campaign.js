@@ -9,9 +9,11 @@ function start(){
 
 	const tl = init()
 	tl.from(".zero",  {duration:.3, scale:1, ease:'back.out'})
-	tl.from(".proline",  {duration:.3, x:"-=100", opacity:0}, "+=1")
-	tl.to(".proline",  {duration:.3, x:"+=100", opacity:0}, "+=1")
-	tl.from(".bring",  {duration:.3, x:"-=100", opacity:0})
+	tl.from(".zero_shadow",  {duration:.01, opacity:0}, "+=1")
+	tl.from(".proline",  {duration:.16, x:"-=100", opacity:0})
+	tl.to([".proline", ".zero_shadow"],  {duration:.25, x:"+=100", opacity:0}, "+=1")
+	
+	tl.from(".bring",  {duration:.25, x:"-=100", opacity:0})
 	tl.to([".zero"],  {duration:.3, x:"+=100", opacity:0}, "+=1")
 	tl.add(chev())
 
@@ -74,10 +76,12 @@ function vertical(){
 	const tl = init()
 	tl.add(bring())
 	tl.to([".zero"],  {duration:.3, opacity:0, x:"+=100"}, "+=1.2")
+	tl.from(".zero_shadow",  {duration:.01, opacity:0}, "+=1")
 	tl.add(chev())
 
 	tl.to(".chev_2a",  {duration:.3, opacity:0}, "+=.5")	
 	tl.from([".proline"],  {duration:.3, opacity:0})
+
 
 	tl.to(".chev_2b",  {duration:.3, opacity:0}, "+=.5")	
 	tl.from([".cta"],  {duration:.3, opacity:0}, "+=.2")
@@ -90,10 +94,7 @@ function vertical(){
 }
 
 function horizontal(){
-	// if(olg_var.size==="320x50"){
-	// 	mobile()
-	// 	return
-	// }
+	
 	const tl = init()
 
 	tl.add("o_in")
@@ -114,7 +115,9 @@ function horizontal(){
 	
 	tl.from(".end",  {duration:.3, opacity:0})
 
-
+	if(olg_var.size==="970x250"){
+		tl.from(".end_2",  {duration:.5, opacity:0}, "+=.5")	
+	}
 	// tl.from(".proline",  {duration:.5, opacity:0})
 	tl.from(".cta",  {duration:.5, opacity:0}, "+=.5")
 	tl.add(olg(), "end")
@@ -127,8 +130,11 @@ function horizontal(){
 function superbowl(){
 	const tl = init()
 	tl.from(".zero",  {duration:.3, scale:1, ease:'back.out'})
-	tl.from(".proline",  {duration:.3, x:"-=100", opacity:0}, "+=1")
-	tl.to(".proline",  {duration:.3, x:"+=100", opacity:0}, "+=1")
+	tl.from(".zero_shadow",  {duration:.01, opacity:0}, "+=1")
+	tl.from(".proline",  {duration:.3, x:"-=100", opacity:0})
+
+	tl.to([".proline", ".zero_shadow"],  {duration:.3, x:"+=100", opacity:0}, "+=1")
+	
 	tl.from(".bring",  {duration:.3, x:"-=100", opacity:0})
 	tl.to([".zero"],  {duration:.3, x:"+=100", opacity:0}, "+=1")
 	tl.add(chev())
